@@ -1,0 +1,19 @@
+{
+  "name": "FinGestor Codespace",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".devcontainer"
+  },
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [
+    "ms-dotnettools.csharp",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "ms-azuretools.vscode-docker"
+  ],
+  "forwardPorts": [5432, 3000],
+  "postCreateCommand": "docker-compose up -d && dotnet restore && npm install",
+  "remoteUser": "vscode"
+}
